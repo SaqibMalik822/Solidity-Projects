@@ -10,9 +10,19 @@ contract ApplicationSubmission{
         uint8 Age;
     }
 
+    Candidate[] public candidates;
+
+    address immutable Owner;
+
+    constructor (){
+        Owner = msg.sender;
+    }
+
     function application(string memory _name,
     string memory _education, string memory _village, uint8 _age){
-        
+        require(msg.sender == Owner, "Authorication failed");
+        candidates.push(Candidate(_name, _education, _village, _age));
+
     }
 }
 
