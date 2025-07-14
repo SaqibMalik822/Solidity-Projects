@@ -16,7 +16,7 @@ contract JobBoard{
         string name;
         string cv;
     }
-    application[] public applications
+    application[] public applications;
     JobInfo[] public jobinfos;
 
     uint256 public bidammount;
